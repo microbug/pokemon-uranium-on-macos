@@ -157,6 +157,7 @@ You can leave the game in `~/pokemon_uranium`, but if you want to move it to (fo
 - In the game, press F1 to access the limited engine settings menu
 - Disable (ironically) `Smooth Mode (Pentium 4 1.5GHz or higher)`
 - Optionally enable `Reduce screen flickering` if it helps reduce tearing for you
+- Performance mode in the game’s options menu seems to have little effect, enabling it may help the game to run on old or low-end systems
 
 ### Playing with a controller
 If you want to use a controller (I recommend the 8Bitdo SN30) follow these instructions:
