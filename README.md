@@ -153,6 +153,15 @@ You can leave the game in `~/pokemon_uranium`, but if you want to move it to (fo
 - When the game has launched you can close Terminal safely
 - Your saves are in `<game directory>/drive_c/users/<username>/Saved Games/Pokemon Uranium`
 
+### Checking for updates
+The game’s built-in update checking mechanism appears to work correctly.
+
+- In the game’s main menu, select `Check for updates`
+- If prompted, allow the game to run the patcher
+- The patcher should run
+	- It may spit out some errors about invalid RAR archives
+	- It’s unknown whether these affect the game, but it seems to run correctly afterwards and says it’s now up-to-date
+
 ### Best settings for smoothness
 - In the game, press F1 to access the limited engine settings menu
 - Disable (ironically) `Smooth Mode (Pentium 4 1.5GHz or higher)`
