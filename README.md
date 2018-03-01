@@ -5,7 +5,7 @@
 ![](https://github.com/microbug/pokemon-uranium-on-mac/raw/master/assets/Initial%20Screenshot.png)
 
 ## Introduction
-Pokémon Uranium development started around 2006 using RPG Maker XP, which as you might guess was designed for Windows XP. The game doesn’t run great on some modern computers and operating systems due to compatibility issues, and the binary is Windows-only. **But [wine](https://www.winehq.org) can run some Windows-only software, and Pokémon Uranium is supported! Wine may even run the game better than Windows installed on the same computer<sup>see appendix</sup>!** Here I’ll detail the steps you need to take to install and run Pokémon Uranium on your Mac.
+Pokémon Uranium development started around 2006 using RPG Maker XP, which as you might guess was designed for Windows XP. The game doesn’t run great on some modern computers and operating systems due to compatibility issues, and the binary is Windows-only. **But [wine](https://www.winehq.org) can run some Windows-only software, and Pokémon Uranium is supported! Wine may even run the game better than Windows installed on the same computer via Bootcamp!** Here I’ll detail the steps you need to take to install and run Pokémon Uranium on your Mac.
 
 This document is based off [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/6sj2rk/installing_and_playing_pokemon_uranium_with_wine/), which dealt with running Pokémon Uranium in Wine under Linux. It has been significantly expanded to help less experienced users.
 
