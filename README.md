@@ -17,6 +17,7 @@ I’ve tested Pokémon Uranium in VMWare Fusion (Windows XP VM), Wine and Bootca
 
 #### Windows 10:
 - Skips frames regularly (GPU is a Radeon Pro 455, which is more than capable enough for this)
+- Has significant screen tearing and no vsync option (AMD driver settings have no effect)
 - Has a weird menu bug where menu navigation slows to around 1 option per second (making changing controls painful)
 - Has the well known line bug on a 4k display:
 	- > Some people have been having problems with weird lines appearing while in fullscreen mode. I am aware of this bug and am attempting to fix it. Until then the temporary fix is to enable "Run in 640 x 480 screen resolution" in the Uranium.exe compatibility settings (This has also been known to reduce lag slightly). (<https://www.reddit.com/r/pokemonuranium/comments/525uk9/official_unofficial_patch_and_server_thread/>, 2018)
@@ -24,6 +25,8 @@ I’ve tested Pokémon Uranium in VMWare Fusion (Windows XP VM), Wine and Bootca
 #### macOS 10.13.3 via Wine:
 - Runs fairly smoothly
 	- Expect a few dropped frames, but fewer than with Windows
+	- Limited screen tearing is present but mainly occurs when running horizontally in the overworld
+		- It can be reduced with the right settings (included in this guide)
 - Doesn’t have the menu slowness bug
 - Doesn’t have the line bug
 
@@ -148,6 +151,11 @@ You can leave the game in `~/pokemon_uranium`, but if you want to move it to (fo
 - You can also drag `Run Pokémon Uranium.command` to the right side of your Dock (next to the Trash)
 - When the game has launched you can close Terminal safely
 - Your saves are in `<game directory>/drive_c/users/<username>/Saved Games/Pokemon Uranium`
+
+### Best settings for smoothness
+- In the game, press F1 to access the limited engine settings menu
+- Disable (ironically) `Smooth Mode (Pentium 4 1.5GHz or higher)`
+- Optionally enable `Reduce screen flickering` if it helps reduce tearing for you
 
 ### Playing with a controller
 If you want to use a controller (I recommend the 8Bitdo SN30) follow these instructions:
