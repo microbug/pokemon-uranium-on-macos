@@ -2,6 +2,8 @@
 
 **Warning: This guide has not been fully tested on a new install of macOS. Proceed with caution!**
 
+![](https://github.com/microbug/pokemon-uranium-on-mac/raw/master/assets/Initial%20Screenshot.png)
+
 ## Introduction
 Pokémon Uranium development started around 2006 using RPG Maker XP, which as you might guess was designed for Windows XP. The game doesn’t run great on some modern computers and operating systems due to compatibility issues, and the binary is Windows-only. **But [wine](https://www.winehq.org) can run some Windows-only software, and Pokémon Uranium is supported! Wine may even run the game better than Windows installed on the same computer<sup>see appendix</sup>!** Here I’ll detail the steps you need to take to install and run Pokémon Uranium on your Mac.
 
@@ -134,3 +136,4 @@ Please attach a screenshot of your ‘About this Mac’ page (you can black out 
 
 ### Other contributions
 If you know what you’re doing or have a suggestion, please make a pull request or open an issue on GitHub. You can also email me at <richard@microbug.uk>. My PGP key is available at <https://keybase.io/microbug>.
+
