@@ -1,4 +1,5 @@
 # Pokémon Uranium on macOS
+*This guide is still young. If there is a problem with it, please open a GitHub issue. If you are unsure if it’s the guide or you, comment in [this Reddit thread](https://reddit.com/add_link_here) and I’ll try to help you.*
 
 ![](https://github.com/microbug/pokemon-uranium-on-mac/raw/master/assets/Initial%20Screenshot.png)
 
