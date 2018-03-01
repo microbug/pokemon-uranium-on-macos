@@ -102,6 +102,9 @@ You can leave the game in `~/pokemon_uranium`, but if you want to move it to (fo
 ## ③ Play the game 😄👏
 Every time you want to play, double click `Run Pokémon Uranium.command` in your game directory to start it. You can also drag `Run Pokémon Uranium.command` to the right side of your Dock (next to the Trash). Your saves are in `<game directory>/drive_c/users/<username>/Saved Games/Pokemon Uranium`.
 
+### Known issues
+- Fullscreen mode causes the game to slow down significantly. An alternative to fullscreen is to set the window to Large, and go to `System Preferences → Accessibility → Zoom → Use scroll gesture with modifier keys to zoom`, then zoom into the game using your chosen modifier key and a scroll wheel / pinch on the trackpad.
+
 ## Contributing
 ### System requirements
 If you’d like to contribute to this guide, the easiest thing you can do is to send me your computer’s specs and let me know how well Pokémon Uranium runs for you. This will help create a more accurate requirements section.
