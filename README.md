@@ -1,11 +1,11 @@
 # Pokémon Uranium on macOS
 
-**Warning: This guide has not been fully tested yet. Proceed with caution!**
-
 ![](https://github.com/microbug/pokemon-uranium-on-mac/raw/master/assets/Initial%20Screenshot.png)
 
 ## Introduction
 Pokémon Uranium development started around 2006 using RPG Maker XP, which as you might guess was designed for Windows XP. The game doesn’t run great on some modern computers and operating systems due to compatibility issues, and the binary is Windows-only. **But [wine](https://www.winehq.org) can run some Windows-only software, and Pokémon Uranium is supported! Wine may even run the game better than Windows installed on the same computer via Bootcamp!** Here I’ll detail the steps you need to take to install and run Pokémon Uranium on your Mac.
+
+If this sounds too good to be true, it’s not. The reason is that Wine effectively runs the game natively but with open source libraries that can perform better than the proprietary Microsoft equivalents. The reason this Wine more widespread is due to the complexity in configuring it, and the fact that until fairly recently it was very buggy and didn’t work with many pieces of software. This has improved greatly in the last few years.
 
 This document is based off [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/6sj2rk/installing_and_playing_pokemon_uranium_with_wine/), which dealt with running Pokémon Uranium in Wine under Linux. It has been significantly expanded to help less experienced users.
 
@@ -147,7 +147,16 @@ You can leave the game in `~/pokemon_uranium`, but if you want to move it to (fo
 - Every time you want to play, double click `Run Pokémon Uranium.command` in your game directory to start it
 - You can also drag `Run Pokémon Uranium.command` to the right side of your Dock (next to the Trash)
 - When the game has launched you can close Terminal safely
-- Your saves are in `<game directory>/drive_c/users/<username>/Saved Games/Pokemon Uranium`.
+- Your saves are in `<game directory>/drive_c/users/<username>/Saved Games/Pokemon Uranium`
+
+### Playing with a controller
+If you want to use a controller (I recommend the 8Bitdo SN30) follow these instructions:
+
+- Install [Enjoyable](https://yukkurigames.com/enjoyable/)
+- In Enjoyable, map each key on your controller to the letter it corresponds with, e.g., left bumper to L, right bumper to R
+- **Make sure to click the `>` button in the top right of the Enjoyable window to enable keyboard mapping**
+- In Pokémon Uranium go to `Options → Controls` and map each control to your controller’s buttons
+- Remember that you’ll need to start Enjoyable to use your controller
 
 ### Known issues
 - Fullscreen mode causes the game to slow down significantly. An alternative to fullscreen is to set the window to Large, and go to `System Preferences → Accessibility → Zoom → Use scroll gesture with modifier keys to zoom`, then zoom into the game using your chosen modifier key and a scroll wheel / pinch on the trackpad.
