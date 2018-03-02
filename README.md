@@ -56,6 +56,7 @@ Homebrew is a package manager for macOS that makes it easy to install, update an
 
 - Open Terminal
 - Paste `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` and hit enter
+	- `ruby` is a programming language, it doesn’t refer to Pokémon Ruby
 - If prompted, hit enter to install the XCode Command Line Tools and enter your password
 - Allow the installer to complete
 
