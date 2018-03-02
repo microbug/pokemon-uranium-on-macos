@@ -26,8 +26,7 @@ I’ve tested Pokémon Uranium in VMWare Fusion (Windows XP VM), Wine and Bootca
 #### macOS 10.13.3 via Wine:
 - Runs fairly smoothly
 	- Expect a few dropped frames, but fewer than with Windows
-	- Limited screen tearing is present but mainly occurs when running horizontally in the overworld
-		- It can be reduced with the right settings (included in this guide)
+	- A little screen tearing is present but mainly occurs when running horizontally in the overworld
 - Doesn’t have the menu slowness bug
 - Doesn’t have the line bug
 
@@ -114,11 +113,26 @@ export WINEPREFIX=~/pokemon_uranium
 cd $WINEPREFIX
 # run wineboot
 wineboot
-# install DLLs
-winetricks directplay directmusic dsound d3dx9_36 devenum dmsynth quartz
+# install DLLs and set driver options
+winetricks directplay directmusic dsound d3dx9_43 ddr=opengl macdriver=x11 win10 devenum dmsynth quartz
 # remove cache files
 rm -rf ~/.cache/wine ~/.cache/winetricks
 ```
+
+> <details>
+>   <summary>Explanation of wine configuration</summary>
+>   `directplay`, `directmusic`, `dsound`: required to run the game.
+>   
+>   `devenum`, `dmsynth`, `quartz`: these may or may not be required. The game doesn’t run slower without them so it’s probably best to include them.
+> 
+>   `d3dx9_36`: a version of `d3dx9` is required, all versions seem to run similarly so the default (`d3dx9_36` is usually the default) is chosen.
+>   
+>   `ddr=opengl`: use `opengl` instead of `gdi`. Improves performance.
+>   
+>   `macdriver=x11`: use XQuartz rather than Wine’s builtin Mac driver. Greatly improves performance.
+>   
+>   `win10`: emulate Windows 10. Seems to run a little smoother than the default Windows 7.
+> </details>
 
 ### Add the game to the virtual Windows installation
 ⏱ This step will take about 5 minutes
@@ -163,10 +177,12 @@ The game’s built-in update checking mechanism appears to work correctly.
 	- It’s unknown whether these affect the game, but it seems to run correctly afterwards and says it’s now up-to-date
 
 ### Best settings for smoothness
-- In the game, press F1 to access the limited engine settings menu
-- Disable (ironically) `Smooth Mode (Pentium 4 1.5GHz or higher)`
+*The default settings seem to be best as of version 1.21*
+
+- In the game, press F1 to access the game engine’s settings menu
+- Enable `Smooth Mode (Pentium 4 1.5GHz or higher)`
 - Optionally enable `Reduce screen flickering` if it helps reduce tearing for you
-- Performance mode in the game’s options menu seems to have little effect, enabling it may help the game to run on old or low-end systems
+- Performance mode in the game’s options menu seems to have little effect on high-end systems, enabling it may help the game to run on old or low-end systems
 
 ### Playing with a controller
 If you want to use a controller (I recommend the 8Bitdo SN30) follow these instructions:
