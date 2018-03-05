@@ -64,13 +64,14 @@ mkdir ~/pokemon_uranium
 export WINEPREFIX=~/pokemon_uranium
 cd $WINEPREFIX || exit
 wineboot
+wineserver -w  # Wait for process to finish before continuing
 winetricks directplay directmusic dsound d3dx9_43 ddr=opengl macdriver=x11 win10 devenum dmsynth quartz
 sleep 5  # Let Wine finish spewing logs
 
 print_step 9
 write_bold "Adding game start script"
 curl -s -o "$HOME/pokemon_uranium/Run Pokémon Uranium.command" "https://raw.githubusercontent.com/microbug/pokemon-uranium-on-macos/master/run.sh"
-chmod u+x ~/pokemon_uranium
+chmod u+x "~/pokemon_uranium/Run Pokémon Uranium.command"
 
 print_step 10
 write_bold "Clearing caches"
