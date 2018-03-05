@@ -42,105 +42,42 @@ I’ve tested Pokémon Uranium in VMWare Fusion (Windows XP VM), Wine and Bootca
 	- You need to download the portable version from [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/54dodq/updated_installer_patch_installers/) later on
 
 
-## ① Tools
-Install each tool in order.
+## ① Install
+⏱ This step will take 30–60 minutes
 
-**Note that `~` means your home directory in UNIX, so `~/pokemon_uranium` translates to `/Users/<username/pokemon_uranium`. You can access your home directory by pressing CMD+SHIFT+H.**
+[Microbug](https://github.com/microbug) has written an automagical installation script that will download, install and configure everything for you. All you need to do is download the game files and move them to the right place.
 
-⏱ Timings assume you have ~100Mb download speed
+If you already have Homebrew installed, the install script will detect it and won’t overwrite your existing installation. It **will** update Homebrew though.
 
-### Homebrew
-⏱ This step will take about 5 minutes
+Open Terminal and copy and paste the following into it, then press enter. This will install all the tools needed to run Pokémon Uranium under Wine.
 
-Homebrew is a package manager for macOS that makes it easy to install, update and manage some pieces of command-line software.
-
-- Open Terminal
-- Paste `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` and hit enter
-	- `ruby` is a programming language, it doesn’t refer to Pokémon Ruby
-- If prompted, hit enter to install the XCode Command Line Tools and enter your password
-- Allow the installer to complete
-
-### XQuartz
-⏱ This step will take about 5 minutes
-
-[XQuartz](https://www.xquartz.org) is required for Wine to run properly.
-
-- Go to [the download page](https://www.xquartz.org) and download the most recent .dmg file
-- Run the .pkg file inside the downloaded file and follow the instructions.
-- You don’t need to reboot yet but you will before you run the game.
-
-###  Wine Staging
-⏱ This step will take about 5 minutes
-
-> Wine (recursive backronym for Wine Is Not an Emulator) is a free and open-source compatibility layer that aims to allow computer programs (application software and computer games) developed for Microsoft Windows to run on Unix-like operating systems. (Wikipedia, 2018)
-
-Wine Staging is the testing area of Wine, where new features and bugs come first. At the time of writing, you must use Wine Staging to install as Wine Stable throws a fatal error.
-
-- Go to [the download page](https://dl.winehq.org/wine-builds/macosx/download.html) and download `Installer for “Wine Staging”`
-- Run the .pkg file once it has downloaded
-- During installation, tick the `64 bit support (optional)` box.
-
-### Winetricks
-⏱ This step will take about 2 minutes
-
-> Winetricks is a helper script to download and install various redistributable runtime libraries needed to run some programs in Wine. These may include replacements for components of Wine using closed source libraries. (WineHQ Wiki, 2018)
-
-- Open Terminal
-- Type `brew install winetricks` and hit enter
-- That’s it! This is why Homebrew is awesome.
-
-## ② Game Installation
-### Restart
-Before continuing, restart to allow your Mac to use the newly installed XQuartz software.
-
-### Create virtual Windows installation
-⏱ This step will take about 20 minutes
-
-- Run the following commands in order (you can copy and paste the whole block)
-	- Lines starting with a `#` are comments and will be ignored by Terminal
-- You will be able to move the `~/pokemon_uranium` folder (which will contain the game and Wine configuration) to your preferred location once everything is ready
-- When wineboot runs, **accept the on-screen prompts to install Mono and Gecko**
-- Lots of warnings/errors will be shown in Terminal, don’t worry about these
-- Wait until the Mono/Gecko installation has completed before continuing
 
 ```bash
-# add Wine to path temporarily
-export PATH=$PATH:"/Applications/Wine Staging.app/Contents/Resources/wine/bin/"
-# make game folder
-mkdir ~/pokemon_uranium
-# set WINEPREFIX to point to folder
-export WINEPREFIX=~/pokemon_uranium
-# enter folder
-cd $WINEPREFIX
-# run wineboot
-wineboot
-# install DLLs and set driver options
-winetricks directplay directmusic dsound d3dx9_43 ddr=opengl macdriver=x11 win10 devenum dmsynth quartz
-# remove cache files
-rm -rf ~/.cache/wine ~/.cache/winetricks
+curl -s "https://raw.githubusercontent.com/microbug/pokemon-uranium-on-macos/master/install.sh" | bash
 ```
 
-> <details>
->   <summary>Explanation of wine configuration</summary>
->   `directplay`, `directmusic`, `dsound`: required to run the game.
->   
->   `devenum`, `dmsynth`, `quartz`: these may or may not be required. The game doesn’t run slower without them so it’s probably best to include them.
-> 
->   `d3dx9_36`: a version of `d3dx9` is required, all versions seem to run similarly so the default (`d3dx9_36` is usually the default) is chosen.
->   
->   `ddr=opengl`: use `opengl` instead of `gdi`. Improves performance.
->   
->   `macdriver=x11`: use XQuartz rather than Wine’s builtin Mac driver. Greatly improves performance.
->   
->   `win10`: emulate Windows 10. Seems to run a little smoother than the default Windows 7.
-> </details>
+<details>
+<summary>Explanation of the wine configuration installed by `install.sh` (for technical users)</summary>
+`directplay`, `directmusic`, `dsound`: required to run the game.
 
+`devenum`, `dmsynth`, `quartz`: these may or may not be required. The game doesn’t run slower without them so it’s probably best to include them.
+
+`d3dx9_36`: a version of `d3dx9` is required, all versions seem to run similarly. `d3dx9_36` is usually the default for wine so it is chosen.
+
+`ddr=opengl`: use `opengl` instead of `gdi`. Improves performance.
+
+`macdriver=x11`: use XQuartz rather than Wine’s builtin Mac driver. Greatly improves performance.
+
+`win10`: emulate Windows 10. Seems to run a little smoother than the default Windows 7.
+</details>
+
+## ② Add the Game
 ### Add the game to the virtual Windows installation
 ⏱ This step will take about 5 minutes
 
 - Option A:
-	- Go to [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/54dodq/updated_installer_patch_installers/) and click on the **Portable** link to download the game files.
-		- The installer doesn’t work under Wine so it needs to be the portable version!
+	- Go to [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/54dodq/updated_installer_patch_installers/) and click on the **Portable** link to download the game files
+		- The installer doesn’t work under Wine so it needs to be the portable version
 	- Extract the zip file once it has downloaded by double clicking on it (this might happen automatically depending on how your Mac is set up)
 - Option B:
 	- Install Pokémon Uranium on a Windows computer
@@ -151,18 +88,17 @@ rm -rf ~/.cache/wine ~/.cache/winetricks
 ### Run the game once to install fonts
 ⏱ This step will take about 5 minutes
 
-- Download the `Run Pokémon Uranium.command` file from this Git repository by clicking the green `Clone or Download` button in the top right and selecting `Download ZIP`
-- Extract the .zip file (this might happen automatically depending on how your Mac is set up)
-- Move `Run Pokémon Uranium.command` in the resulting folder to `~/pokemon_uranium/Run Pokémon Uranium.command` 
-- Run `xattr -dr com.apple.quarantine "~/pokemon_uranium/Run Pokémon Uranium.command"` in the Terminal
-	- This step removes (for this file only) the ‘unidentified developer’ that otherwise occurs when you try and run a file downloaded from the internet
-- Double click the file to start Pokémon Uranium
-- The fonts will look a bit weird on this first run. The game will automatically install the fonts it needs at this point. Press enter to accept when the game asks you if you want to restart it. It will close (and doesn’t automatically restart).
+- Go to `~/pokemon_uranium`
+- Double click `Run Pokémon Uranium` to start Pokémon Uranium
+- The fonts will look strange on this first run
+	- The game will automatically install the fonts it needs
+- Press enter to accept when the game asks you if you want to restart it
+- It will close (and won’t automatically restart)
 
-### Move the game to your preferred folder
+### Move the game to your preferred location
 You can leave the game in `~/pokemon_uranium`, but if you want to move it to (for example) `~/Documents/Pokémon Uranium` you can now do so through Finder.
 
-## ③ Play the game 😄👏
+## ③ Play Pokémon Uranium 😄👏
 - Every time you want to play, double click `Run Pokémon Uranium.command` in your game directory to start it
 - You can also drag `Run Pokémon Uranium.command` to the right side of your Dock (next to the Trash)
 - When the game has launched you can close Terminal safely
@@ -196,6 +132,7 @@ If you want to use a controller (I recommend the 8Bitdo SN30) follow these instr
 
 ### Known issues
 - Fullscreen mode causes the game to slow down significantly. An alternative to fullscreen is to set the window to Large, and go to `System Preferences → Accessibility → Zoom → Use scroll gesture with modifier keys to zoom`, then zoom into the game using your chosen modifier key and a scroll wheel / pinch on the trackpad.
+	- Fullscreen performance issues have also been reported on Windows so this is unlikely to improve unless a patch that fixes it is released
 
 ## Contributing
 ### System requirements
