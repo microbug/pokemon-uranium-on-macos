@@ -8,50 +8,54 @@ write_bold () {
     printf "\\033[1m%b\\033[0m\\n" "$1"
 }
 
+print_step () {
+    printf "\\n\\033[31m\\033[1m##### OVERALL INSTALLATION STEP %s #####\\033[0m\\n" "$1"
+}
+
 write_bold "Unofficial Pokémon Uranium Wine Installation Tool"
-write_bold "For instructions for this tool go to https://github.com/microbug/pokemon-uranium-on-macos"
+write_bold "For instructions for this tool please go to https://github.com/microbug/pokemon-uranium-on-macos"
 
 if [ -d "$HOME/pokemon_uranium" ]; then
     write_red_bold "Error: ~/pokemon_uranium already exists, please move or delete it before continuing"
     exit 1
 fi
 
+print_step 1
 if [ -x "$(command -v brew)" ]; then
-    write_bold "\\n====> STEP 1"
     write_bold "Homebrew is already installed! Good for you, Homebrew is awesome."
 else
-    write_bold "\\n====> STEP 1"
-    write_bold "Homebrew not installed, installing..."
+    write_bold "Homebrew not installed, installing now"
     write_red_bold "Accept all prompts and provide your password when it's asked for"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    HOMEBREW_INSTALL_SCRIPT=$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install) || exit 1
+    /usr/bin/ruby -e "$HOMEBREW_INSTALL_SCRIPT"
 fi
 
-write_bold "\\n====> STEP 2"
+print_step 2
 write_bold "Updating Homebrew"
 brew update
 
-write_bold "\\n====> STEP 3"
+print_step 3
 write_bold "Tapping caskroom"
 brew tap caskroom/cask
 
-write_bold "\\n====> STEP 4"
+print_step 4
 write_bold "Tapping caskroom/versions"
 brew tap caskroom/versions
 
-write_bold "\\n====> STEP 5"
+print_step 5
 write_bold "Installing XQuartz"
 brew cask install caskroom/cask/xquartz
 
-write_bold "\\n====> STEP 6"
+print_step 6
 write_bold "Installing Wine Staging"
 brew cask install caskroom/versions/wine-staging
 
-write_bold "\\n====> STEP 7"
+print_step 7
 write_bold "Installing Winetricks"
 brew install winetricks
 
-write_bold "\\n====> STEP 8"
-write_bold "\\nCreating virtual Windows installation at ~/pokemon_uranium"
+print_step 8
+write_bold "Creating virtual Windows installation at ~/pokemon_uranium"
 write_red_bold "Remember to accept all prompts to install Mono and/or Gecko"
 write_bold "Lots of Wine logs (may look like nonsense) coming up..."
 export PATH=$PATH:"/Applications/Wine Staging.app/Contents/Resources/wine/bin/"
@@ -64,9 +68,9 @@ winetricks directplay directmusic dsound d3dx9_43 ddr=opengl macdriver=x11 win10
 rm -rf ~/.cache/wine ~/.cache/winetricks
 sleep 5  # Let Wine finish spewing logs
 
-write_bold "\\n====> STEP 9"
-write_bold "\\nAdding game start script"
+print_step 9
+write_bold "Adding game start script"
 curl -s -O "$HOME/pokemon_uranium/Run Pokémon Uranium.command" "https://raw.githubusercontent.com/microbug/pokemon-uranium-on-macos/master/run.sh"
 
-write_bold "\\nDone, now REBOOT and check the guide on GitHub for next steps"
+write_bold "Done, now REBOOT and check the guide on GitHub for next steps"
 
