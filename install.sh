@@ -71,13 +71,13 @@ sleep 5  # Let Wine finish spewing logs
 print_step 9
 write_bold "Adding game start script"
 curl -s -o "$HOME/pokemon_uranium/Run Pokémon Uranium.command" "https://raw.githubusercontent.com/microbug/pokemon-uranium-on-macos/master/run.sh"
-chmod u+x "~/pokemon_uranium/Run Pokémon Uranium.command"
+chmod +x "~/pokemon_uranium/Run Pokémon Uranium.command"
 
 print_step 10
 write_bold "Clearing caches"
 rm -rf ~/.cache/wine ~/.cache/winetricks
 rm -rf $(brew --cache)
 
-write_red_bold "Done!"
+write_bold "Done!"
 write_red_bold "Wait for all Wine configuration to finish (wait for any remaining windows to close), then REBOOT and check the guide on GitHub for next steps"
 
