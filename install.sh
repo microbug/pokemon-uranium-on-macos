@@ -70,6 +70,7 @@ sleep 5  # Let Wine finish spewing logs
 print_step 9
 write_bold "Adding game start script"
 curl -s -o "$HOME/pokemon_uranium/Run Pokémon Uranium.command" "https://raw.githubusercontent.com/microbug/pokemon-uranium-on-macos/master/run.sh"
+chmod u+x ~/pokemon_uranium
 
 print_step 10
 write_bold "Clearing caches"
