@@ -8,7 +8,7 @@ Pokémon Uranium development started around 2006 using RPG Maker XP, which as yo
 
 If this sounds too good to be true, it’s not. The reason is that Wine effectively runs the game natively but with open source libraries that can perform better than the proprietary Microsoft equivalents. The reason this Wine more widespread is due to the complexity in configuring it, and the fact that until fairly recently it was very buggy and didn’t work with many pieces of software. This has improved greatly in the last few years.
 
-This document is based off [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/m9yvd6/download_links/), which dealt with running Pokémon Uranium in Wine under Linux. It has been significantly expanded to help less experienced users.
+This document is based off [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/6sj2rk/installing_and_playing_pokemon_uranium_with_wine/), which dealt with running Pokémon Uranium in Wine under Linux. It has been significantly expanded to help less experienced users.
 
 ### What to expect
 I’ve tested Pokémon Uranium in VMWare Fusion (Windows XP VM), Wine and Bootcamp (running Windows 10 natively on my MacBook Pro). This is what I found:
