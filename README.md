@@ -1,3 +1,5 @@
+# NO LONGER MAINTAINED
+
 # Pokémon Uranium on macOS
 *This guide is still young. If there is a problem with it, please open a GitHub issue. If you are unsure if it’s the guide or you, comment in [this Reddit thread](https://www.reddit.com/r/pokemonuranium/comments/818ysm/guide_install_and_play_pokémon_uranium_on_macos/) and I’ll try to help you.*
 
