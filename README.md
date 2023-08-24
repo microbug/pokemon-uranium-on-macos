@@ -39,7 +39,7 @@ I’ve tested Pokémon Uranium in VMWare Fusion (Windows XP VM), Wine and Bootca
 - A vague knowledge of UNIX and the Terminal (helpful for troubleshooting but not strictly necessary if you follow this exactly and everything works)
 - A copy of the current Pokémon Uranium files (the folder `C:\Program Files (x86)\Pokemon\Uranium` on a Windows install)
 	- Wine cannot be used to run the installer
-	- You need to download the portable version from [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/54dodq/updated_installer_patch_installers/) later on
+	- You need to download the portable (ZIP) version from [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/54dodq/updated_installer_patch_installers/) later on
 
 
 ## ① Install
@@ -76,8 +76,8 @@ curl -s "https://raw.githubusercontent.com/microbug/pokemon-uranium-on-macos/mas
 ⏱ This step will take about 5 minutes
 
 - Option A:
-	- Go to [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/54dodq/updated_installer_patch_installers/) and click on the **Portable** link to download the game files
-		- The installer doesn’t work under Wine so it needs to be the portable version
+	- Go to [this Reddit post](https://www.reddit.com/r/pokemonuranium/comments/m9yvd6/download_links/) and click on the **ZIP** link to download the game files
+		- The installer doesn’t work under Wine so it needs to be the portable (ZIP) version
 	- Extract the zip file once it has downloaded by double clicking on it (this might happen automatically depending on how your Mac is set up)
 - Option B:
 	- Install Pokémon Uranium on a Windows computer
